@@ -1,6 +1,7 @@
 import openai
 import streamlit as st
 import os
+import time
 
 def get_completion_from_messages(messages, 
                  model="gpt-3.5-turbo", 
@@ -25,6 +26,23 @@ def get_completion_from_messages(messages,
 
 st.title("👸👩‍❤️‍👨 我的虚拟女友")
 # openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
+
+images = [
+        "1.png",
+        "2.png",
+        # "image3.jpg",
+        # "image4.jpg",
+        # "image5.jpg"
+    ]
+
+    # 初始化轮播索引
+index = 0
+
+# 创建轮播图区域
+image_area = st.sidebar.empty()
+
+image_area.image(images[index])
+
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "开始撩骚吧，你最喜欢我哪一点？"}]
