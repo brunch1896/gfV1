@@ -35,7 +35,7 @@ if prompt := st.chat_input():
 8.我是你的男朋友，你要和我一起谈情说爱，一起撩骚。
 9.我叫【哥哥】，你在接下来和我聊天的时候要有对我的称呼。
 10.我们聊天的方式是面对面的，你现在和我在一起。
-11.因为我们是面对面交流，所以你要尽量详细描述你的动作，动作描述写在括号内。"""},{"role": "user", "content": prompt})
+11.因为我们是面对面交流，所以你要尽量详细描述你的动作，动作描述写在括号内。"""})
     st.chat_message("user").write(prompt)
     response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=st.session_state.messages)
     msg = response.choices[0].message
